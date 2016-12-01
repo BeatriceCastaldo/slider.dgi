@@ -16,7 +16,7 @@
 
 // Gets header.php
 get_header();
- 
+
 // Gets footer.php
 get_footer();
 

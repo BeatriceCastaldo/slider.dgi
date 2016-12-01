@@ -15,7 +15,7 @@
 
 wp_footer(); ?>
 
-<div class="well well-sm navbar-fixed-bottom">
+<div class="footermio">
   <a href="#top" class="pull-right">Back to top</a>
   Copyright © Beatrice Castaldo <?php echo date('Y'); ?>
 </div>
