@@ -1,63 +1,41 @@
-/*$(function(){
+$(document).ready(function() {
 
-    var ticker = function(){
-
-       ticker_timeout = setTimeout(function(){
-
-        $('#slidermio li:first').animate( {marginLeft: '-25%'}, 450, function(){
-
-          $(this).detach().appendTo('ul#slidermio').attr('style', ''); 
-
-        });
-
-        ticker();
-
-      }, 2500);   
-    };
-
-
-    $('#slidermio').hover(function() { 
-
-        $('#slidermio').stop();
-
-        clearTimeout(ticker_timeout);   
-
-    }, function() {
-
-        ticker();
+        $(".next").click(function() {
+             var $curr = $('.mySlides:visible'),
+                 $next = ($curr.next().length) ? $curr.next() : $('.mySlides').first();
+                $next.css('z-index',2).fadeIn('slow', function() {
+                $curr.hide().css('z-index',0);
+                $next.css('z-index',1);
+            });
     });
 
-    ticker();
+        $(".prev").click(function() {
+             var $curr = $('.mySlides:visible'),
+                 $prev = ($curr.prev().length) ? $curr.prev() : $('.mySlides').last();
+                $prev.css('z-index',2).fadeIn('slow', function() {
+                $curr.hide().css('z-index',0);
+                $prev.css('z-index',1);
+            });
+        });
 
-  });*/
-
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1} 
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none"; 
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace("active", "");
-  }
-
-  if (slides.length > 0) { 
-  slides[slideIndex-1].style.display = "block"; 
-  dots[slideIndex-1].className += " active";
-}
-}
-
+        var interval = setInterval(function() {
+        var $curr = $('.mySlides:visible'), 
+            $next = ($curr.next().length) ? $curr.next() : $('.mySlides').first();
+        $next.css('z-index',2).fadeIn('slow', function() {
+            $curr.hide().css('z-index',0);
+            $next.css('z-index',1);
+        });
+    }, 6000);
+    $('.mySlides').hover(function() {
+        clearInterval(interval);
+    }, function() {
+        interval = setInterval(function() {
+        var $curr = $('.mySlides:visible'), 
+            $next = ($curr.next().length) ? $curr.next() : $('.mySlides').first();
+        $next.css('z-index',2).fadeIn('slow', function() {
+            $curr.hide().css('z-index',0);
+            $next.css('z-index',1);
+        });
+    }, 6000);
+    });
+});

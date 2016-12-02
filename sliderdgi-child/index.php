@@ -17,6 +17,9 @@
 // Gets header.php
 get_header();
 
+// Gets slider
+new_wpt_slider();
+
 // Gets footer.php
 get_footer();
 

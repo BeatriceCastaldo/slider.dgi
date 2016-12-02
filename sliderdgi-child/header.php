@@ -17,7 +17,6 @@
 
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
-  <script src="/wp/wp-content/themes/sliderdgi-child/script.js" type="text/javascript"></script>
 
   <?php 
   wp_head(); ?>
@@ -47,15 +46,14 @@
       ?>
     </nav>
 
-<!-- Slider statico -->
+<!-- Slider statico
     <div id="containermio">
       <ul id="slidermio">
         <li class="mySlides">
           <div id="heightimg">
-          <div id="slide1" class="text">alicè</div>
+            <div id="slide1" class="text">alicè</div>
             <img src="wp-content/uploads/2016/11/8.jpg"/>
           </div>
-          
         </li>
 
         <li class="mySlides">
@@ -113,4 +111,4 @@
         <span class="dot" onclick="currentSlide(6)"></span>
         <span class="dot" onclick="currentSlide(7)"></span>
       </div>
-    </div>
+    </div> -->
